@@ -1,0 +1,23 @@
+<%= form_for @cookie, :html => {:multipart => true} do |f| %>
+  <% if @cookie.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cookie.errors.count, "error") %> prohibited this cooky from being saved:</h2>
+
+      <ul>
+      <% @cookie.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title%>
+  </p>
+
+  <p>
+    <%= f.label :image, "or image URL" %>
+    <%= f.file_field :image %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

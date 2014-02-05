@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @cookie.title %>
+</p>
+ <%= image_tag @cookie.image.url%>
+<p>
+  <strong>Body:</strong>
+  <%= @cookie.body %>
+</p>
+
+<%= link_to 'Edit', edit_cooky_path(@cookie) %> |
+<%= link_to 'Back', cookies_path %>
